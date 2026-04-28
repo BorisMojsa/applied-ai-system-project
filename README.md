@@ -1,5 +1,8 @@
 # 🎵 Applied AI Music Recommender (RAG + Guardrails + Evaluation)
 
+## Loom Walkthrough
+- Video: <PASTE_YOUR_LOOM_LINK_HERE>
+
 ## Project Summary
 
 This project extends my **Module 3 project: _Music Recommender Simulation_** (a CLI content-based recommender that ranks songs from `data/songs.csv` using `genre`, `mood`, `energy`, and `likes_acoustic`).
@@ -61,7 +64,7 @@ flowchart LR
 
 If the diagram does not render in your Markdown preview, use [Mermaid Live Editor](https://mermaid.live) to validate, or view this file on GitHub (README Mermaid is supported there).
 
-### Architecture image (PNG)
+### ![System Architecture](assets/architecture.png)
 
 Save your exported system diagram PNG into `assets/` (recommended name: `assets/architecture.png`) so it’s visible in your GitHub portfolio.
 
@@ -207,7 +210,30 @@ See the full write-up in [**model_card.md**](model_card.md), especially the **Li
 python -m src.main --query "Upbeat synth-pop workout playlist"
 ```
 
-Expected behavior: the system retrieves KB guidance, parses prefs (e.g., `genre=pop`, `mood=happy`, `energy≈0.9`), then prints a ranked table and logs the run to `logs/runs.jsonl`.
+Output (excerpt):
+
+```text
+Loading songs from data/songs.csv...
+Loaded songs: 18
+
+========================================================================
+Free-text query (RAG) — Parsed preferences
+========================================================================
+Query: 'Upbeat synth-pop workout playlist'
+Parsed prefs: {'genre': 'pop', 'mood': 'happy', 'energy': 0.9, 'likes_acoustic': False}
+
+Retrieved context:
+- Playlist Vibe Guide (score=0.275)
+- Playlist Vibe Guide (score=0.034)
+
+Top 5 recommendations:
+
+|   # | Title          | Artist        | Genre      | Mood     |   Score | Reasons                                                                                                      |
+|-----|----------------|---------------|------------|----------|---------|--------------------------------------------------------------------------------------------------------------|
+|   1 | Sunrise City   | Neon Echo     | pop        | happy    |   4.41  | genre match (+2.0); mood match (+1.0); energy closeness (+0.92; gap=0.08); acoustic fit (+0.49; target=0.20) |
+|   2 | Gym Hero       | Max Pulse     | pop        | intense  |   3.395 | genre match (+2.0); energy closeness (+0.97; gap=0.03); acoustic fit (+0.42; target=0.20)                    |
+|   3 | Rooftop Lights | Indigo Parade | indie pop  | happy    |   2.285 | mood match (+1.0); energy closeness (+0.86; gap=0.14); acoustic fit (+0.43; target=0.20)                     |
+```
 
 ### Example 2 — Baseline profiles (no query)
 
@@ -223,7 +249,28 @@ Expected behavior: prints the built-in profiles (A–E) using the baseline scori
 python -m src.eval
 ```
 
-Expected behavior: prints JSON with per-case pass/fail, confidence scores, and top-3 recommendations.
+Output (excerpt):
+
+```text
+{
+  "passed": 3,
+  "total": 3,
+  "results": [
+    {
+      "query": "Upbeat synth-pop workout playlist",
+      "prefs": {
+        "genre": "pop",
+        "mood": "happy",
+        "energy": 0.9,
+        "likes_acoustic": false
+      },
+      "warnings": [],
+      "confidence": 0.5496327494324165,
+      "pass": true
+    }
+  ]
+}
+```
 
 ---
 
@@ -237,7 +284,7 @@ Expected behavior: prints JSON with per-case pass/fail, confidence scores, and t
 
 ## Testing Summary
 
-- `pytest`: core recommender tests + RAG preference parsing tests.
+- `pytest`: core recommender tests + RAG preference parsing tests (**5 passed** locally).
 - `src.eval`: a small harness that runs predefined queries and reports **pass/fail** plus **confidence**.
 
 ---
