@@ -64,9 +64,9 @@ flowchart LR
 
 If the diagram does not render in your Markdown preview, use [Mermaid Live Editor](https://mermaid.live) to validate, or view this file on GitHub (README Mermaid is supported there).
 
-### ![System Architecture](assets/architecture.png)
+### Architecture image (PNG)
 
-Save your exported system diagram PNG into `assets/` (recommended name: `assets/architecture.png`) so it’s visible in your GitHub portfolio.
+![System architecture diagram](assets/architecture.png)
 
 ---
 
