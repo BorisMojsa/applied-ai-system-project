@@ -148,21 +148,21 @@ Terminal captures live in `screenshots/` and are embedded below. Each shows the 
 
 | Profile | File |
 | --- | --- |
-| High-Energy Pop | `screenshots/a.png` |
-| Chill Lofi | `screenshots/b.png` |
-| Deep Intense Rock | `screenshots/c.png` |
-| Adversarial high energy + sad mood | `screenshots/d.png` |
-| Adversarial metal + relaxed | `screenshots/e.png` |
+| High-Energy Pop | `screenshots/A.png` |
+| Chill Lofi | `screenshots/B.png` |
+| Deep Intense Rock | `screenshots/C.png` |
+| Adversarial high energy + sad mood | `screenshots/D.png` |
+| Adversarial metal + relaxed | `screenshots/E.png` |
 
-![Profile A — High-Energy Pop](screenshots/a.png)
+![Profile A — High-Energy Pop](screenshots/A.png)
 
-![Profile B — Chill Lofi](screenshots/b.png)
+![Profile B — Chill Lofi](screenshots/B.png)
 
-![Profile C — Deep Intense Rock](screenshots/c.png)
+![Profile C — Deep Intense Rock](screenshots/C.png)
 
-![Profile D — Adversarial high energy + sad mood](screenshots/d.png)
+![Profile D — Adversarial high energy + sad mood](screenshots/D.png)
 
-![Profile E — Adversarial metal + relaxed](screenshots/e.png)
+![Profile E — Adversarial metal + relaxed](screenshots/E.png)
 
 ### Captured CLI excerpt (Profile A)
 
