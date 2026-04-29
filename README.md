@@ -1,7 +1,7 @@
 # 🎵 Applied AI Music Recommender (RAG + Guardrails + Evaluation)
 
 ## Loom Walkthrough
-- Video: <PASTE_YOUR_LOOM_LINK_HERE>
+- Video: [Loom walkthrough](https://www.loom.com/share/49a5f963bd6746cb89ab122727772653)
 
 ## Project Summary
 
